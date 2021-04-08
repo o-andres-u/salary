@@ -1,5 +1,6 @@
 package com.masglobal.consumer;
 
+import com.masglobal.business.model.MasGlobalEmployee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
@@ -16,8 +17,8 @@ public class EmployeesConsumer {
         this.employeesEndpoint = employeesEndpoint;
     }
 
-    public String getEmployees() {
-        return restTemplate.getForObject(employeesEndpoint, String.class);
+    public MasGlobalEmployee[] getEmployees() {
+        return restTemplate.getForObject(employeesEndpoint, MasGlobalEmployee[].class);
     }
 
 }
