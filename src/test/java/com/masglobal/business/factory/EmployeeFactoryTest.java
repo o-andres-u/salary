@@ -22,11 +22,7 @@ public class EmployeeFactoryTest {
   @Test
   public void getEmployeeFunctionTest() {
     MasGlobalEmployee masGlobalEmployee = new MasGlobalEmployee();
-    masGlobalEmployee.setId(1);
-    masGlobalEmployee.setName("Lupita");
     masGlobalEmployee.setContractTypeName("HourlySalaryEmployee");
-    masGlobalEmployee.setRoleId(1);
-    masGlobalEmployee.setRoleName("Developer");
     masGlobalEmployee.setHourlySalary(10000.0);
     masGlobalEmployee.setMonthlySalary(50000.0);
 
