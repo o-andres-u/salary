@@ -4,6 +4,8 @@ import com.masglobal.business.model.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SalaryServiceTest {
@@ -30,6 +32,14 @@ public class SalaryServiceTest {
     assertEquals(employee.getContractType(), "MonthlySalaryEmployee");
     assertEquals(employee.getRoleName(), "Contractor");
     assertEquals(employee.getAnnualSalary(), 600_000);
+  }
+
+  @Test
+  public void getEmployeesTest() {
+    List<Employee> employees = salaryService.getEmployeesInformation();
+    assertEquals(2, employees.size());
+    assertTrue(employees.stream().anyMatch(employee -> employee.getContractType().equals("HourlySalaryEmployee")));
+    assertTrue(employees.stream().anyMatch(employee -> employee.getContractType().equals("MonthlySalaryEmployee")));
   }
 
 }

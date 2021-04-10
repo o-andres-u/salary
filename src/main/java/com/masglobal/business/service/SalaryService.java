@@ -7,8 +7,8 @@ import com.masglobal.consumer.EmployeesConsumer;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class SalaryService {
@@ -23,7 +23,9 @@ public class SalaryService {
 
   public List<Employee> getEmployeesInformation() {
     MasGlobalEmployee[] employees = employeesConsumer.getEmployees();
-    return Collections.emptyList();
+    return Arrays.stream(employees)
+        .map(employeeFactory.getEmployee)
+        .collect(Collectors.toList());
   }
 
   public Employee getEmployeeInformation(Integer id) {
