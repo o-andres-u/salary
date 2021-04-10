@@ -20,5 +20,4 @@ public class EmployeesConsumer {
     public MasGlobalEmployee[] getEmployees() {
         return restTemplate.getForObject(employeesEndpoint, MasGlobalEmployee[].class);
     }
-
 }
