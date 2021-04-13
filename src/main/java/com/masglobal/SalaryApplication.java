@@ -19,6 +19,7 @@ public class SalaryApplication {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/employees").allowedOriginPatterns("http://localhost:3000");
+        registry.addMapping("/employees/{id}").allowedOriginPatterns("http://localhost:3000");
       }
     };
   }
